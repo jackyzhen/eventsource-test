@@ -1,0 +1,21 @@
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script>
+
+  const eventSrc = new window.EventSource('./events');
+  
+  eventSrc.addEventListener('update', (event) => {
+    console.log(JSON.parse(event.data));
+  });
+
+  const sendMsg = (msg) => {
+    const name = document.querySelector('#name').value;
+    fetch('/msg', 
+    {
+      method: 'POST',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify({name, msg}),
+    });
+  }
+
+</script>
+<label>Name: </label><input id="name" value="unknown"/>

@@ -7,5 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "jacky zhen",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "event-source-emitter": "0.0.2",
+    "express": "^4.14.0"
+  }
 }
